@@ -1,0 +1,5 @@
+.env
+flask_venv/
+newsletter_generator/
+*.pem
+*.conf
