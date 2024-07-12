@@ -7,9 +7,11 @@ services:
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password  # You'll want to handle this more securely in production
     networks:
       - pg-network
+    secrets:
+      - POSTGRES_PASSWORD
+
 
   pgadmin:
     image: dpage/pgadmin4
@@ -18,23 +20,26 @@ services:
       - "5050:80"
     environment:
       PGADMIN_DEFAULT_EMAIL: "fosternilsson99@gmail.com"
-      PGADMIN_DEFAULT_PASSWORD: password  # Secure this in production
     networks:
       - pg-network
+    secrets:
+      - PGADMIN_DEFAULT_PASSWORD  
 
   flask_app:
     build: .  
     environment:
-      - DB_HOST=postgresql
-      - DB_USER=postgres
-      - DB_PASSWORD=password
-      - DB_NAME=postgres
+
     volumes:
-      - ./templates/:/app/templates/
+      - ./templates/index.html:/app/templates/index.html
       - ./static/:/app/static/ 
     networks:
       - pg-network
       - cloudflare-nginx
+    secrets:
+      - DB_HOST
+      - DB_USER
+      - DB_PASSWORD
+      - DB_NAME
 
   nginx:
     image: nginx:latest
@@ -51,10 +56,28 @@ services:
   
   cloudflared:
     image: cloudflare/cloudflared:latest
-    command: tunnel --no-autoupdate run --token <YOUR_TOKEN> --url http://my-nginx:443
+    command: tunnel --no-autoupdate run --token-file /run/secrets/CLOUDFLARE_TOKEN --url http://my-nginx:443
     networks:
       - cloudflare-nginx
+    secrets:
+      - source: CLOUDFLARE_TOKEN
+        target: /run/secrets/CLOUDFLARE_TOKEN  
+        mode: 0400 
 
 networks:
   pg-network:
   cloudflare-nginx:
+
+secrets:
+  POSTGRES_PASSWORD:
+    external: true
+  PGADMIN_DEFAULT_PASSWORD:
+    external: true
+  DB_USER:
+    external: true
+  DB_PASSWORD:
+    external: true
+  DB_NAME:
+    external: true  
+  CLOUDFLARE_TOKEN:
+    file: ./cloudflare_token.txt 

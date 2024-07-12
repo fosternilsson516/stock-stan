@@ -4,3 +4,4 @@ newsletter_generator/
 *.pem
 *.conf
 __pycache__/
+send_newsletter_email/

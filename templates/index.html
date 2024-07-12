@@ -57,6 +57,9 @@
         .stock-stan li {
             display: inline;
             margin-right: 20px;
+            width: calc(20% - 20px); /* 4 list items per row, minus margin */
+            text-align: center; /* Center the text in each item */
+            box-sizing: border-box;
         }
 
         .stock-stan a {
@@ -69,7 +72,7 @@
             margin-bottom: 30px;
         }
         .newsletter-content, .newsletter-content * {  /* Target all elements within .newsletter-content */
-            font-family: "Inter Tight", sans-serif !important; /* Use Inter Tight for everything inside the newsletter */
+            font-family: "Inter Tight", sans-serif !important; 
         }
 
         .content-container {
@@ -78,6 +81,7 @@
             background-color: #000000;
             padding: 20px;
             border-radius: 10px;
+            box-sizing: border-box;
         }
         .content-container li {
             list-style-type: none;
@@ -95,7 +99,21 @@
 
         .newsletter-content {
             line-height: 1.6;
+            margin: 0 auto;
         }
+        @media (max-width: 786px) { 
+            .newsletter-content {
+                width: 75%; 
+                margin-left: 19%;
+            }
+            .feature-image {
+                width: 75%;
+                margin-left: 19%;
+            }
+
+            /* Other mobile-specific styles */
+        }
+
         #subscribe .content-container {
             text-align: center; /* Center all content within the subscribe container */
         }
@@ -122,6 +140,20 @@
         #subscribe button {
             background-color: #9775fa; /* Purple background for button */
             cursor: pointer;       /* Show pointer cursor on hover */
+        }
+        #newsletter a {
+            color: #9775fa; /* Blue link color - adjust as needed */
+            text-decoration: underline; /* Optional underline */
+        }
+        .analyst-recommendations {
+            margin: 0 auto; /* Centers the table */
+            width: 60%; /* Adjust width as needed */
+            border-collapse: collapse; /* Merges cell borders for a cleaner look */
+            border-color: #9775fa;
+        }
+        .analyst-recommendations td, th {
+            padding: 8px;
+            text-align: center; /* Center text in data cells */
         }
     </style>
 </head>
@@ -167,36 +199,212 @@
         <div class="content-container">
             <img src="../static/images/Gemini_Generated_Image_07-08-24.jpeg" alt="Feature Image" class="feature-image">
             <div class="newsletter-content">
-                <h2>Stan's Daily Stock Scoop: It's a Green Day, But Not for Everyone!</h2>
-                <p><strong>Hey, Stock Market Savants!</strong>  It's your favorite market maestro, Stock Stan, here, ready to dissect today's market like a seasoned financial surgeon. Buckle up, because we've got some green shoots, some red flags, and a whole lot of market mojo to unpack.</p>
-                <p><strong>The Big Picture:</strong>  Today's market is a bit of a mixed bag. While some sectors are humming along like a well-oiled engine, others are sputtering like a rusty old jalopy. But fear not, my friends, because that's where Stan's expertise comes in.</p>
-                <p><strong>Stock Spotlight:</strong></p>
+                <h2>Stock Stan's News Sentiment: July 12, 2024</h2>
+                <p>Yo, Stock Stan fans, it's your boy Stan, back with the hottest market insights! Buckle up, because today's news is a wild ride, from potential rocketship launches to some gnarly headwinds. Let's dive in!</p>
+                <h3>Bullish: 🚀</h3>
+                <p><strong>Euro Credit Holdings Expansion:</strong> This UK-based financial firm is launching a bunch of new products to cater to their clients' needs. The bullish signal here is their clear focus on growth, which could attract new investors and boost <strong>FOREX:EUR</strong>.  <a href="https://www.benzinga.com/pressreleases/24/07/g39749887/euro-credit-holdings-limited-targets-expansion-with-new-financial-products">https://www.benzinga.com/pressreleases/24/07/g39749887/euro-credit-holdings-limited-targets-expansion-with-new-financial-products</a></p>
+                <p><strong>Rocket Lab: Golden Cross:</strong> This space company is hitting new highs, and its stock is flashing a "Golden Cross" – a technical signal that often indicates bullish momentum. Get ready for a potential lift-off in <strong>RKLB</strong>. <a href="https://www.benzinga.com/general/space/24/07/39748543/rocket-lab-blasts-off-with-golden-cross-time-to-buckle-up">https://www.benzinga.com/general/space/24/07/39748543/rocket-lab-blasts-off-with-golden-cross-time-to-buckle-up</a></p>
+                <p><strong>Arm Holdings: 52-Week High:</strong>  This semiconductor company is on fire, hitting a 52-week high. It's a strong sign of confidence in <strong>ARM</strong>, potentially sparking a rally in the tech sector.  <a href="https://www.benzinga.com/news/earnings/24/07/39716785/arm-holdings-hits-52-week-high-whats-next-for-investors">https://www.benzinga.com/news/earnings/24/07/39716785/arm-holdings-hits-52-week-high-whats-next-for-investors</a></p>
+                <p><strong>Top 4 Blue Chips:</strong> We've got four Dow giants that are looking mighty strong: <strong>AMZN, AAPL, WMT, and CVX</strong>.  These are solid picks for a well-diversified portfolio, so keep an eye on them.  <a href="https://www.zacks.com/stock/news/2300593/top-4-blue-chip-stocks-picks-to-strengthen-your-portfolio">https://www.zacks.com/stock/news/2300593/top-4-blue-chip-stocks-picks-to-strengthen-your-portfolio</a></p>
+                <h3>Bearish: 🐻</h3>
+                <p><strong>Lufthansa Cuts Profit Target:</strong> This German airline is slashing its profit target for the second time this year.  It's a warning sign that the aviation industry is facing serious headwinds, which could impact <strong>AFRAF, EADSF, RYAOF</strong>, and <strong>BA</strong>.  <a href="https://www.business-standard.com/companies/news/germany-s-lufthansa-slashes-profit-target-for-a-second-time-in-2024-124071200933_1.html">https://www.business-standard.com/companies/news/germany-s-lufthansa-slashes-profit-target-for-a-second-time-in-2024-124071200933_1.html</a></p>
+                <p><strong>Dollar Index Loses Momentum:</strong> The US Dollar Index is dipping, indicating a potential weakening of the greenback. This could lead to a shift in investor sentiment towards other currencies, so be on the lookout for potential volatility in <strong>FOREX:USD</strong> and <strong>FOREX:EUR</strong>.  <a href="https://www.business-standard.com/markets/capital-market-news/dollar-index-loses-momentum-on-increasing-bets-of-a-near-term-federal-rate-cut-124071200352_1.html">https://www.business-standard.com/markets/capital-market-news/dollar-index-loses-momentum-on-increasing-bets-of-a-near-term-federal-rate-cut-124071200352_1.html</a></p>
+                <p><strong>EU Slaps Charges on X:</strong>  The European Union is cracking down on Elon Musk's social media platform, X, for allegedly fostering disinformation. This could be a warning sign for tech companies that aren't taking content moderation seriously, and could hurt <strong>META</strong> and <strong>GOOG</strong>.  <a href="https://www.business-standard.com/technology/tech-news/eu-slaps-charges-on-elon-musk-s-x-over-disinformation-and-illegal-content-124071200793_1.html">https://www.business-standard.com/technology/tech-news/eu-slaps-charges-on-elon-musk-s-x-over-disinformation-and-illegal-content-124071200793_1.html</a></p>
+                <h3>Neutral: 😐</h3>
+                <p><strong>Winnipeg Folk Festival Funding:</strong> This festival is getting a government boost. While positive for the arts and culture scene, it's unlikely to move the market significantly.  <a href="https://www.benzinga.com/pressreleases/24/07/n39748995/minister-vandal-announces-federal-investment-for-winnipeg-folk-festival">https://www.benzinga.com/pressreleases/24/07/n39748995/minister-vandal-announces-federal-investment-for-winnipeg-folk-festival</a></p>
+                <p><strong>LianLian Global and Guavapay Partnership:</strong>  These companies are teaming up to create a new global payment experience. It's interesting, but it's too early to tell how it will impact <strong>APG</strong>.  <a href="https://www.prnewswire.com/apac/news-releases/lianlian-global-and-guavapay-announce-new-global-payment-experience-302195589.html">https://www.prnewswire.com/apac/news-releases/lianlian-global-and-guavapay-announce-new-global-payment-experience-302195589.html</a></p>
+                <p><strong>OpenText Hackathon:</strong> This hackathon is focusing on sustainability in healthcare.  It's good for innovation, but probably won't have much impact on <strong>APG</strong> or <strong>WM</strong>. <a href="https://www.newswire.ca/news-releases/just-what-the-doctor-ordered-2024-opentext-hackathon-to-focus-on-sustainability-in-healthcare-887163966.html">https://www.newswire.ca/news-releases/just-what-the-doctor-ordered-2024-opentext-hackathon-to-focus-on-sustainability-in-healthcare-887163966.html</a></p>
+                <h3>Other Notable News: 📰</h3>
+                <p><strong>Luxury Housing Sales Boom in Mumbai:</strong>  Luxury homes in Mumbai are selling like hotcakes.  This could indicate strong economic growth in India, but it's unlikely to directly impact specific tickers. <a href="https://www.financialexpress.com/money/mumbai-clocks-rs-12300-cr-luxury-housing-sales-in-h1-cy24-3550584/">https://www.financialexpress.com/money/mumbai-clocks-rs-12300-cr-luxury-housing-sales-in-h1-cy24-3550584/</a></p>
+                <p><strong>NABARD Launches Agri Fund:</strong> This fund is aimed at supporting startups and rural enterprises in the agriculture sector.  While positive for the agricultural industry, it's too early to tell if it will have a major market impact.  <a href="https://www.business-standard.com/finance/news/nabard-arm-launches-rs-750-cr-agri-fund-to-finance-startups-rural-cos-124071200786_1.html">https://www.business-standard.com/finance/news/nabard-arm-launches-rs-750-cr-agri-fund-to-finance-startups-rural-cos-124071200786_1.html</a></p>
+                <p><strong>EcoAi Coin:</strong>  This coin is making waves in the cryptocurrency space with its focus on sustainability.  It's an interesting development, but it's too early to predict if it will lead to significant gains for <strong>CRYPTO:BTC</strong>, <strong>CRYPTO:ETH</strong>, <strong>CRYPTO:DOGE</strong>, and <strong>BITF</strong>.  <a href="https://www.benzinga.com/partner/cryptocurrency/24/07/39747489/ecoai-coin-leading-the-charge-towards-sustainable-cryptocurrency-practices">https://www.benzinga.com/partner/cryptocurrency/24/07/39747489/ecoai-coin-leading-the-charge-towards-sustainable-cryptocurrency-practices</a></p>
+                <p><strong>That's all, folks!</strong> Remember, this is just a snapshot of the market today, so always do your own research before making any investment decisions.  Stay tuned for more market insights from your boy Stan! </p>
+                <h2>Social Media Sentiment: A Stock Stan Breakdown</h2>
+                <p>Get ready, fam! The social media chatter about the stock market is HOT, and I've got the scoop on the biggest movers and shakers. </p>
+                <p><strong>The Stan Special:</strong> The overall mood on social media is a <strong>mixed bag</strong>.  There's a definite sense of volatility and uncertainty, with plenty of both bullish and bearish sentiment swirling around. </p>
+                <h3>Most Significant and Impactful Posts</h3>
+                <p>The social mediasphere's buzzing about Tesla,  with posts like "Tesla shares close down 10% after report of robotaxi unveiling delay" and "Nice rug pull on $TSLA" sparking intense discussion.  This news seems to be generating a lot of negativity toward the stock.  However, a post highlighting a CEO's sentencing for fraud ("CEO of Goldman Sachs-backed startup sentenced to 20 years in prison") could also be a sign of investor jitters, potentially impacting broader market sentiment.  </p>
+                <h3>Trends and Patterns</h3>
+                <p>Two clear trends emerge from the social media chatter: </p>
                 <ul>
-                <li>
-                <p><strong>BrightSpring Health Services (BTSG):</strong>  This healthcare stock is looking mighty bullish, with multiple service lines earning top industry accreditations. That's like getting a gold star from the financial universe!  Analysts are singing its praises, with a strong "Buy" recommendation, and the sentiment on Wall Street is undeniably positive.  Keep an eye on BTSG – it could be a breakout star in the coming weeks.</p>
-                </li>
-                <li>
-                <p><strong>Waste Management (WM):</strong>  Sustainability is the name of the game these days, and WM is perfectly positioned to capitalize on this growing trend.  With a strong "Buy" rating from analysts and a positive sentiment, WM could be a solid long-term play. </p>
-                </li>
-                <li>
-                <p><strong>Tesla (TSLA):</strong>  The electric car juggernaut is still a hot commodity, with investors showing continued bullish sentiment.  However, analysts are a bit more cautious, with a "Hold" recommendation.  This could indicate that TSLA is nearing a peak, but it's definitely one to watch.</p>
-                </li>
+                <li><strong>CPI and Interest Rates:</strong> The release of the CPI data is generating a lot of excitement, with posters analyzing the implications for future interest rate hikes.  It's clear that investors are closely watching the Fed's moves and how they might affect the market's direction.  </li>
+                <li><strong>Meme Stock Mayhem:</strong> The meme stock narrative continues, with strong reactions to NVDA's volatility and posts about "rug pulls" and "gay bears" dominating the conversation. This suggests that retail investors are actively participating, driving the market's direction in some instances. </li>
                 </ul>
-                <p><strong>Market Trends:</strong></p>
+                <h3>Most Frequently Mentioned Stock Tickers</h3>
+                <p>The top tickers on social media are:</p>
                 <ul>
-                <li>
-                <p><strong>Sustainability:</strong>  It's clear that investors are placing a premium on companies that are making a positive impact on the environment.  Waste Management is a prime example of this trend.</p>
-                </li>
-                <li>
-                <p><strong>China's Growth:</strong> Domino's Pizza China (DPCDF) is expanding rapidly in the Chinese market, signaling that the Asian giant is still a hotbed for business.  This suggests that investments in emerging markets could be a fruitful strategy.</p>
-                </li>
-                <li>
-                <p><strong>Crypto Concerns:</strong>  The crypto market is still facing a rollercoaster ride, with scams and volatility casting a shadow over the future of Bitcoin (CRYPTO:BTC).  Coinbase (COIN) is also struggling with negative sentiment as users face concerns about fraud. </p>
-                </li>
+                <li><strong>$TSLA:</strong> Tesla remains the undisputed king of the social media chatter, with posts focusing on its delayed robotaxi unveiling and its recent share price slump.  </li>
+                <li><strong>$NVDA:</strong>  Nvidia's wild ride is attracting plenty of attention, with posts about its recent rally and subsequent pullback generating significant buzz.  </li>
+                <li><strong>$COST:</strong>  Costco is making waves, likely due to its consistent performance and the ongoing debate about its stock's valuation. </li>
                 </ul>
-                <p><strong>Stan's Send-Off:</strong></p>
-                <p>Remember, my friends, the stock market is a marathon, not a sprint. Don't get caught up in the daily ups and downs.  Focus on long-term strategies, diversify your portfolio, and always do your own research before making any investment decisions. And remember, Stan's always here to guide you along the way. </p>
-                <p><strong>Stay tuned for tomorrow's edition of Stan's Daily Stock Scoop!</strong>  Until then, happy investing! </p> 
+                <h3>Impact of the Stock Market on Posters and Vice Versa</h3>
+                <p>Social media users are clearly feeling the impact of the market's volatility.  A post detailing a trader's 63% account loss in a single morning ("account down -63% by 11 min meltdown at market open") serves as a cautionary tale, highlighting the real risks of trading options.  This sentiment is mirrored in other posts lamenting losses and questioning their trading strategies.  The reverse effect is also evident, with the stock market seemingly influenced by retail traders' actions on meme stocks like $NVDA and $TSLA.  These posts suggest that the retail investor community is a powerful force, potentially driving short-term market fluctuations. </p>
+                <p>This social media sentiment breakdown reveals a market on edge, navigating the complexities of CPI, interest rate hikes, and the ever-present meme stock drama.  It's a volatile landscape, and navigating this terrain requires a keen eye and a healthy dose of skepticism.  Stay tuned, fam! The market's a wild ride, and I'll keep you updated on the latest social media buzz.  </p>
+                <h2>Alright, Stock Stan fam, let's wrap this market mayhem up with some juicy insights!</h2>
+                <p>Today's news was a mixed bag, with bullish signals from Euro Credit Holdings' expansion and Rocket Lab's "Golden Cross" juxtaposed against bearish trends like Lufthansa's profit cuts and the weakening US Dollar.</p>
+                <p>Diving into the data, we see some clear patterns emerging.  The tech sector is buzzing, with <strong>ARM</strong> hitting a 52-week high and <strong>NVDA</strong> attracting significant social media buzz, despite its recent volatility.  The "Big Four" blue chips – <strong>AMZN, AAPL, WMT, and CVX</strong> – are looking mighty strong, potentially indicating a healthy market overall.  However, the social media chatter about <strong>TSLA</strong> is overwhelmingly negative, fueled by its delayed robotaxi unveiling and share price slump. This suggests a potential headwind for the electric vehicle giant. </p>
+                <p>Analyst recommendations are painting a generally optimistic picture, with <strong>RKLB, AMZN, AAPL, WMT, CVX, BA, META, GOOG, NVDA, and COST</strong> all enjoying strong "buy" ratings.  While it's essential to do your own research, this data paints a positive picture for these tickers.</p>
+                <p>Ultimately, the market is feeling the pressure of economic uncertainty and interest rate hikes, as evidenced by the social media chatter about CPI and the Fed's moves.  However, the "meme stock mayhem" and the strong performance of some tech giants suggest that opportunities still exist for savvy investors.</p>
+                <p>Stay tuned, Stock Stan crew, because this market is a wild ride!  I'll be back tomorrow with more insights to keep you ahead of the curve. </p>
+                <table border="1" class="dataframe analyst-recommendations">
+                  <thead>
+                    <tr style="text-align: right;">
+                      <th>buy</th>
+                      <th>hold</th>
+                      <th>period</th>
+                      <th>sell</th>
+                      <th>strongBuy</th>
+                      <th>strongSell</th>
+                      <th>ticker</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>10</td>
+                      <td>4</td>
+                      <td>2024-07-01</td>
+                      <td>0</td>
+                      <td>5</td>
+                      <td>0</td>
+                      <td>RKLB</td>
+                    </tr>
+                    <tr>
+                      <td>13</td>
+                      <td>15</td>
+                      <td>2024-07-01</td>
+                      <td>1</td>
+                      <td>6</td>
+                      <td>1</td>
+                      <td>ARM</td>
+                    </tr>
+                    <tr>
+                      <td>45</td>
+                      <td>2</td>
+                      <td>2024-07-01</td>
+                      <td>0</td>
+                      <td>19</td>
+                      <td>0</td>
+                      <td>AMZN</td>
+                    </tr>
+                    <tr>
+                      <td>23</td>
+                      <td>12</td>
+                      <td>2024-07-01</td>
+                      <td>1</td>
+                      <td>14</td>
+                      <td>0</td>
+                      <td>AAPL</td>
+                    </tr>
+                    <tr>
+                      <td>28</td>
+                      <td>4</td>
+                      <td>2024-07-01</td>
+                      <td>0</td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>WMT</td>
+                    </tr>
+                    <tr>
+                      <td>17</td>
+                      <td>7</td>
+                      <td>2024-07-01</td>
+                      <td>0</td>
+                      <td>4</td>
+                      <td>0</td>
+                      <td>CVX</td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td>8</td>
+                      <td>2024-07-01</td>
+                      <td>5</td>
+                      <td>6</td>
+                      <td>0</td>
+                      <td>AFRAF</td>
+                    </tr>
+                    <tr>
+                      <td>15</td>
+                      <td>6</td>
+                      <td>2024-07-01</td>
+                      <td>1</td>
+                      <td>7</td>
+                      <td>0</td>
+                      <td>EADSF</td>
+                    </tr>
+                    <tr>
+                      <td>14</td>
+                      <td>4</td>
+                      <td>2024-07-01</td>
+                      <td>0</td>
+                      <td>7</td>
+                      <td>0</td>
+                      <td>RYAOF</td>
+                    </tr>
+                    <tr>
+                      <td>15</td>
+                      <td>11</td>
+                      <td>2024-07-01</td>
+                      <td>1</td>
+                      <td>11</td>
+                      <td>1</td>
+                      <td>BA</td>
+                    </tr>
+                    <tr>
+                      <td>37</td>
+                      <td>7</td>
+                      <td>2024-07-01</td>
+                      <td>2</td>
+                      <td>22</td>
+                      <td>0</td>
+                      <td>META</td>
+                    </tr>
+                    <tr>
+                      <td>33</td>
+                      <td>11</td>
+                      <td>2024-07-01</td>
+                      <td>0</td>
+                      <td>17</td>
+                      <td>0</td>
+                      <td>GOOG</td>
+                    </tr>
+                    <tr>
+                      <td>16</td>
+                      <td>20</td>
+                      <td>2024-07-01</td>
+                      <td>6</td>
+                      <td>10</td>
+                      <td>4</td>
+                      <td>TSLA</td>
+                    </tr>
+                    <tr>
+                      <td>37</td>
+                      <td>6</td>
+                      <td>2024-07-01</td>
+                      <td>0</td>
+                      <td>21</td>
+                      <td>0</td>
+                      <td>NVDA</td>
+                    </tr>
+                    <tr>
+                      <td>20</td>
+                      <td>13</td>
+                      <td>2024-07-01</td>
+                      <td>0</td>
+                      <td>10</td>
+                      <td>0</td>
+                      <td>COST</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>1</td>
+                      <td>2024-07-01</td>
+                      <td>0</td>
+                      <td>3</td>
+                      <td>0</td>
+                      <td>BITF</td>
+                    </tr>
+                  </tbody>
+                </table>
             </div>
         </div>
     </div>
