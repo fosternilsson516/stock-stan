@@ -3,6 +3,7 @@ from datetime import date
 import json
 from db import emailHandler
 import os
+from markupsafe import Markup
 
 app = Flask(__name__)
 email_handler = emailHandler('newsletter') 
@@ -31,7 +32,7 @@ def read_generated_html():
 @app.route('/')
 def index():
     dynamic_content = read_generated_html()
-    return render_template('index.html', dynamic_content=dynamic_content)
+    return render_template('index.html', dynamic_content=Markup(dynamic_content))
 
 @app.route('/subscribe', methods=['POST'])
 def subscribe():
