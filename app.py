@@ -6,7 +6,7 @@ import os
 from markupsafe import Markup
 
 app = Flask(__name__)
-email_handler = emailHandler('newsletter') 
+email_handler = emailHandler('public') 
 
 def read_generated_html():
     """
